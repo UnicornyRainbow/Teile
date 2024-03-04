@@ -1,0 +1,112 @@
+/*Colors are shamelessly stolen from Libadwaita
+https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/named-colors.html*/
+
+:root {
+    /*Accent Colors*/
+    --accent-color: #1c71d8;
+    --accent-bg-color: #3584e4;
+    --accent-fg-color: #ffffff;
+    /*Destructive Colors*/
+    --destructive-color: #c01c28;
+    --destructive-bg-color: #e01b24;
+    --destructive-fg-color: #ffffff;
+    /*Success Colors*/
+    --success-color: #1b8553;
+    --success-bg-color: #2ec27e;
+    --success-fg-color: #ffffff;
+    /*Warning Colors*/
+    --warning-color: #9c6e03;
+    --warning-bg-color: #e5a50a;
+    --warning-fg-color: rgba(0, 0, 0, 0.8);
+    /*Error Colors*/
+    --error-color: #c01c28;
+    --error-bg-color: #e01b24;
+    --error-fg-color: #ffffff;
+    /*Window Colors*/
+    --window-bg-color: #fafafa;
+    --window-fg-color: rgba(0, 0, 0, 0.8);
+    /*View Colors*/
+    --view-bg-color: #ffffff;
+    --view-fg-color: rgba(0, 0, 0, 0.8);
+    /*Header Bar Colors*/
+    --headerbar_bg_color: #ffffff;
+    --headerbar_fg_color: rgba(0, 0, 0, 0.8);
+    --headerbar_shade_color: rgba(0, 0, 0, 0.12);
+    /*Sidebar Colors*/
+    --sidebar_bg_color: #ebebeb;
+    --sidebar_fg_color: rgba(0, 0, 0, 0.8);
+    --sidebar_border_color: rgba(0, 0, 0, 0.07);
+    --sidebar_shade_color: rgba(0, 0, 0, 0.07);
+    /*Secondary Sidebar Colors*/
+    --secondary_sidebar_bg_color: #f3f3f3;
+    --secondary_sidebar_fg_color: rgba(0, 0, 0, 0.8);
+    --secondary_sidebar_border_color: rgba(0, 0, 0, 0.07);
+    --secondary_sidebar_shade_color: rgba(0, 0, 0, 0.07);
+    /*Card Colors*/
+    --card_bg_color: #ffffff;
+    --card_fg_color: rgba(0, 0, 0, 0.8);
+    --card_shade_color: rgba(0, 0, 0, 0.07);
+    /*Dialog Colors*/
+    --dialog_bg_color: #fafafa;
+    --dialog_fg_color: rgba(0, 0, 0, 0.8);
+    /*Popover Colors*/
+    --popover_bg_color: #ffffff;
+    --popover_fg_color: rgba(0, 0, 0, 0.8);
+    --rgba(0, 0, 0, 0.07);
+    /*Miscellaneous Colors*/
+    --shade_color: rgba(0, 0, 0, 0.07);
+    --scrollbar_outline_color: #ffffff;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /*Accent Colors*/
+        --accent-color: #78aeed;
+        /*Destructive Colors*/
+        --destructive-color: #ff7b63;
+        --destructive-bg-color: #c01c28;
+        /*Success Colors*/
+        --success-color: #8ff0a4;
+        --success-bg-color: #26a269;
+        /*Warning Colors*/
+        --warning-color: #f8e45c;
+        --warning-bg-color: #cd9309;
+        /*Error Colors*/
+        --error-color: #ff7b63;
+        --error-bg-color: #c01c28;
+        /*Window Colors*/
+        --window-bg-color: #242424;
+        --window-fg-color: #ffffff;
+        /*View Colors*/
+        --view-bg-color: #1e1e1e;
+        --view-fg-color: #ffffff;
+        /*Header Bar Colors*/
+        --headerbar_bg_color: #303030;
+        --headerbar_fg_color: #ffffff;
+        --headerbar_shade_color: rgba(0, 0, 0, 0.36);
+        /*Sidebar Colors*/
+        --sidebar_bg_color: #303030;
+        --sidebar_fg_color: #ffffff;
+        --sidebar_border_color: rgba(0, 0, 0, 0.36);
+        --sidebar_shade_color: rgba(0, 0, 0, 0.25);
+        /*Secondary Sidebar Colors*/
+        --secondary_sidebar_bg_color: #2a2a2a;
+        --secondary_sidebar_fg_color: #ffffff;
+        --secondary_sidebar_border_color: rgba(0, 0, 0, 0.36);
+        --secondary_sidebar_shade_color: rgba(0, 0, 0, 0.25);
+        /*Card Colors*/
+        --card_bg_color: rgba(255, 255, 255, 0.08);
+        --card_fg_color: #ffffff;
+        --card_shade_color: rgba(0, 0, 0, 0.36);
+        /*Dialog Colors*/
+        --dialog_bg_color: #383838;
+        --dialog_fg_color: #ffffff;
+        /*Popover Colors*/
+        --popover_bg_color: #383838;
+        --popover_fg_color: #ffffff;
+        --popover-shade-color: rgba(0, 0, 0, 0.25);
+        /*Miscellaneous Colors*/
+        --shade_color: rgba(0, 0, 0, 0.25);
+        --scrollbar_outline_color: rgba(0, 0, 0, 0.5);
+    }
+}
