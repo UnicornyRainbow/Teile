@@ -4,13 +4,52 @@
     box-sizing: border-box;
     background: var(--window-bg-color);
     color: var(--window-fg-color);
+    border: none;
+    font-size: medium;
+    font-family: sans-serif;
 }
 
-body{
+body {
     background: var(--window-bg-color);
     color: var(--window-fg-color);
 }
 
-button{
-    background: var(--);
+h1 {
+    font-size: 2.5em;
 }
+h2 {
+     font-size: 2em;
+}
+h3 {
+      font-size: 1.5em;
+}
+
+.input-bg {
+    width: max-content;
+    height: max-content;
+    border-radius: 6px;
+    background: var(--button_bg_color);
+}
+.input-bg.flat {
+    background: inherit;
+}
+
+button {
+    padding: 8px 15px;
+    border-radius: 6px;
+    background: none;
+}
+.input-bg.flat button:hover, .input-bg.flat button.toggled {
+    background: var(--button_bg_overlay_1);
+}
+button:hover, .input-bg.flat button:active, .input-bg button.toggled, .input-bg.flat button.toggled:hover {
+    background: var(--button_bg_overlay_2);
+}
+.input-bg button.toggled:hover {
+    background: var(--button_bg_overlay_3);
+}
+button:active, .input-bg button.toggled:active, .input-bg.flat button.toggled:active {
+    background: var(--button_bg_overlay_4);
+}
+
+
