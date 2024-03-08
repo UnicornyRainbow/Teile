@@ -1,6 +1,25 @@
 /*Colors are shamelessly stolen from Libadwaita
 https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/named-colors.html*/
 
+/*
+Copyright 2023 UnicornyRainbow
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+SPDX-License-Identifier: AGPL-3.0-or-later
+*/
+
 :root {
     /*Accent Colors*/
     --accent-color: #1c71d8;
@@ -56,6 +75,7 @@ https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/named-colors.html*/
     /*Miscellaneous Colors*/
     --shade_color: rgba(0, 0, 0, 0.07);
     --scrollbar_outline_color: #ffffff;
+    /*Button Colors*/
     --button_bg_color: rgba(0, 0, 0, 0.08);
     --button_bg_overlay_1: rgba(0, 0, 0, 0.04);
     --button_bg_overlay_2: rgba(0, 0, 0, 0.08);
@@ -113,5 +133,11 @@ https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/named-colors.html*/
         /*Miscellaneous Colors*/
         --shade_color: rgba(0, 0, 0, 0.25);
         --scrollbar_outline_color: rgba(0, 0, 0, 0.5);
+        /*Button Colors*/
+        --button_bg_color: rgba(0, 0, 0, 0.08);
+        --button_bg_overlay_1: rgba(0, 0, 0, 0.04);
+        --button_bg_overlay_2: rgba(0, 0, 0, 0.08);
+        --button_bg_overlay_3: rgba(0, 0, 0, 0.12);
+        --button_bg_overlay_4: rgba(0, 0, 0, 0.16);
     }
 }
