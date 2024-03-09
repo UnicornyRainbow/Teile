@@ -1,5 +1,10 @@
 {
   "image": "mcr.microsoft.com/devcontainers/rust:1",
+  "customizations": {
+    "vscode": {
+      "extensions": ["ritwickdey.LiveServer"]
+    }
+  },
   "features": {
   }
 }
