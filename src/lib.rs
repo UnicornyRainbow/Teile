@@ -124,6 +124,8 @@ pub struct Button {
     ///
     /// **This is only for styling, you should handle the toggling on your own!**
     pub toggled: bool,
+    /// The ID of the `Button`, because of the structure how `Button` is build, it will be converted in an `id-inner` and `id-outer`
+    pub id: Option<String>,
     /// Whatever child you want the button to have, usually some text
     pub child: String,
 }
@@ -139,11 +141,12 @@ impl Button {
     ///     bg_color: Option::None,
     ///     flat: true,
     ///     toggled: true,
+    ///     id: Option::Some("example".to_string()),
     ///     child: "Example".to_string(),
     /// }.render();
     /// let rendered_button_result = "\
-    /// <div class=\"input-bg flat\" >
-    ///     <button class=\"toggled\">Example</button>
+    /// <div id=\"example-outer\" class=\"input-bg flat\" >
+    ///     <button id=\"example-inner\" class=\"toggled\">Example</button>
     /// </div>".to_string();
     /// assert_eq!(rendered_button, rendered_button_result);
     ///
@@ -151,11 +154,12 @@ impl Button {
     ///     bg_color: Option::Some(Colors::AccentColor),
     ///     flat: false,
     ///     toggled: false,
+    ///     id: Option::None,
     ///     child: "Example".to_string(),
     /// }.render();
     /// let rendered_button_color_result = "\
-    /// <div class=\"input-bg \" style=\"background=var(--accent-color)\">
-    ///     <button class=\"\">Example</button>
+    /// <div  class=\"input-bg \" style=\"background=var(--accent-color)\">
+    ///     <button  class=\"\">Example</button>
     /// </div>".to_string();
     /// assert_eq!(rendered_button_color, rendered_button_color_result);
     /// ```
@@ -173,10 +177,14 @@ impl Button {
             true => {"toggled"}
             false => {""}
         };
+        let (id_outer, id_inner): (String, String) = match &self.id {
+            None => {("".to_string(), "".to_string())}
+            Some(id) => {(format!("id=\"{}-outer\"", id.to_string()), format!("id=\"{}-inner\"", id.to_string()))}
+        };
         let child: &String = &self.child;
         format!("\
-<div class=\"input-bg {flat}\" {bg_color}>
-    <button class=\"{toggled}\">{child}</button>
+<div {id_outer} class=\"input-bg {flat}\" {bg_color}>
+    <button {id_inner} class=\"{toggled}\">{child}</button>
 </div>").to_string()
     }
 }

@@ -37,11 +37,12 @@ mod tests {
             bg_color: Option::None,
             flat: false,
             toggled: false,
+            id: Option::None,
             child: "".to_string(),
         }.render();
         let rendered_button_result = "\
-<div class=\"input-bg \" >
-    <button class=\"\"></button>
+<div  class=\"input-bg \" >
+    <button  class=\"\"></button>
 </div>".to_string();
         assert_eq!(rendered_button, rendered_button_result);
     }
@@ -52,11 +53,12 @@ mod tests {
             bg_color: Option::Some(Colors::AccentColor),
             flat: true,
             toggled: true,
+            id: Option::Some("example".to_string()),
             child: "Example".to_string(),
         }.render();
         let rendered_button_result = "\
-<div class=\"input-bg flat\" style=\"background=var(--accent-color)\">
-    <button class=\"toggled\">Example</button>
+<div id=\"example-outer\" class=\"input-bg flat\" style=\"background=var(--accent-color)\">
+    <button id=\"example-inner\" class=\"toggled\">Example</button>
 </div>".to_string();
         assert_eq!(rendered_button, rendered_button_result);
     }
