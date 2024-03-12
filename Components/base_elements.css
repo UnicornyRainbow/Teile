@@ -58,6 +58,11 @@ button {
     border-radius: 6px;
     background: none;
 }
+
+button a {
+    all: unset;
+}
+
 .input-bg.flat button:hover, .input-bg.flat button.toggled {
     background: var(--button_bg_overlay_1);
 }

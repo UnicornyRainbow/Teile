@@ -38,11 +38,12 @@ mod tests {
             flat: false,
             toggled: false,
             id: Option::None,
+            additional_args: Option::None,
             child: "".to_string(),
         }.render();
         let rendered_button_result = "\
 <div  class=\"input-bg \" >
-    <button  class=\"\"></button>
+    <button  class=\"\" ></button>
 </div>".to_string();
         assert_eq!(rendered_button, rendered_button_result);
     }
@@ -54,11 +55,12 @@ mod tests {
             flat: true,
             toggled: true,
             id: Option::Some("example".to_string()),
+            additional_args: Option::Some(vec!["hx-post=\"/clicked\"".to_string(), "hx-swap=\"outerHTML\"".to_string()]),
             child: "Example".to_string(),
         }.render();
         let rendered_button_result = "\
 <div id=\"example-outer\" class=\"input-bg flat\" style=\"background=var(--accent-color)\">
-    <button id=\"example-inner\" class=\"toggled\">Example</button>
+    <button id=\"example-inner\" class=\"toggled\" hx-post=\"/clicked\" hx-swap=\"outerHTML\">Example</button>
 </div>".to_string();
         assert_eq!(rendered_button, rendered_button_result);
     }

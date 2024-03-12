@@ -109,6 +109,7 @@ impl Css for Colors {
 }
 
 /// Equivalent to a normal HTML button with some styling
+/// It is made up from an outer `div` and an inner `button`
 #[allow(dead_code)]
 pub struct Button {
     /// - Use `Option::None` to use the default color.
@@ -126,6 +127,8 @@ pub struct Button {
     pub toggled: bool,
     /// The ID of the `Button`, because of the structure how `Button` is build, it will be converted in an `id-inner` and `id-outer`
     pub id: Option<String>,
+    /// Additional HTML args applied to the inner `button` element intended for use with libraries like HTMX
+    pub additional_args: Option<Vec<String>>,
     /// Whatever child you want the button to have, usually some text
     pub child: String,
 }
@@ -142,11 +145,12 @@ impl Button {
     ///     flat: true,
     ///     toggled: true,
     ///     id: Option::Some("example".to_string()),
+    ///     additional_args: Option::Some(vec!["hx-post=\"/clicked\"".to_string(), "hx-swap=\"outerHTML\"".to_string()]),
     ///     child: "Example".to_string(),
     /// }.render();
     /// let rendered_button_result = "\
     /// <div id=\"example-outer\" class=\"input-bg flat\" >
-    ///     <button id=\"example-inner\" class=\"toggled\">Example</button>
+    ///     <button id=\"example-inner\" class=\"toggled\" hx-post=\"/clicked\" hx-swap=\"outerHTML\">Example</button>
     /// </div>".to_string();
     /// assert_eq!(rendered_button, rendered_button_result);
     ///
@@ -155,11 +159,12 @@ impl Button {
     ///     flat: false,
     ///     toggled: false,
     ///     id: Option::None,
+    ///     additional_args: Option::None,
     ///     child: "Example".to_string(),
     /// }.render();
     /// let rendered_button_color_result = "\
     /// <div  class=\"input-bg \" style=\"background=var(--accent-color)\">
-    ///     <button  class=\"\">Example</button>
+    ///     <button  class=\"\" >Example</button>
     /// </div>".to_string();
     /// assert_eq!(rendered_button_color, rendered_button_color_result);
     /// ```
@@ -181,10 +186,14 @@ impl Button {
             None => {("".to_string(), "".to_string())}
             Some(id) => {(format!("id=\"{}-outer\"", id.to_string()), format!("id=\"{}-inner\"", id.to_string()))}
         };
+        let additional_args: String = match &self.additional_args {
+            None => {"".to_string()}
+            Some(args) => {args.join(" ")}
+        };
         let child: &String = &self.child;
         format!("\
 <div {id_outer} class=\"input-bg {flat}\" {bg_color}>
-    <button {id_inner} class=\"{toggled}\">{child}</button>
+    <button {id_inner} class=\"{toggled}\" {additional_args}>{child}</button>
 </div>").to_string()
     }
 }

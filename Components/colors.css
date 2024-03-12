@@ -134,10 +134,10 @@ SPDX-License-Identifier: AGPL-3.0-or-later
         --shade_color: rgba(0, 0, 0, 0.25);
         --scrollbar_outline_color: rgba(0, 0, 0, 0.5);
         /*Button Colors*/
-        --button_bg_color: rgba(0, 0, 0, 0.08);
-        --button_bg_overlay_1: rgba(0, 0, 0, 0.04);
-        --button_bg_overlay_2: rgba(0, 0, 0, 0.08);
-        --button_bg_overlay_3: rgba(0, 0, 0, 0.12);
-        --button_bg_overlay_4: rgba(0, 0, 0, 0.16);
+        --button_bg_color: rgba(255, 255, 255, 0.08);
+        --button_bg_overlay_1: rgba(255, 255, 255, 0.04);
+        --button_bg_overlay_2: rgba(255, 255, 255, 0.08);
+        --button_bg_overlay_3: rgba(255, 255, 255, 0.12);
+        --button_bg_overlay_4: rgba(255, 255, 255, 0.16);
     }
 }
